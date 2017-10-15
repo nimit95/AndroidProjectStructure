@@ -34,6 +34,7 @@ The basic structure of an Android Application built using Gradle is shown below.
       ![](images/gradle.png)
 
       ![](images/gradleWrapper.png)
+      [File Link](./AndroidDemo/gradle/wrapper/gradle-wrapper.properties)
 
       In Gradle folder, we have a wrapper folder, which has a file for gradle properties. It denotes version of the gradle that is to be used to build the project. Android Studio automatically makes it to the latest version available.
 
@@ -41,12 +42,37 @@ The basic structure of an Android Application built using Gradle is shown below.
 
       This file has gradle properties needed at the time of execution. Like you can set the RAM limit consumed by Gradle.
 
-     * **bulild.gradle**
+    * **[bulild.gradle](./AndroidDemo/build.gradle)**
 
         We are depending on gradle plugin to run our project. In this file gradle plugin version is mentioned for the whole project. Android Studio version and gradle plugin version should be same. If you open an earlier project then this version should be changed to match the current Android Studio version.
 
-      * **settings.gradle**
+    * **[settings.gradle](./AndroidDemo/settings.gradle)**
 
         In the project modules which are needed to be built are listed in this file. By default it only has 'app'.
 
-      * **app**
+    * **app**
+
+        This is the default application/module folder named as 'app'. It has all thr folders and files associated with our apllication.
+
+        ![](images/app.png)
+
+        * **[build.gradle](./AndroidDemo/app/build.gradle)**
+
+            This is the gradle file pertaining to the module. The file has
+
+        * **src**
+
+            This folder contains all the source files of the prject.
+
+            ![](images/src.png)
+
+            * **androidTest**
+            * **test**
+            * **main**
+
+                ![](images/main.png)
+
+                * **java**
+                * **res**
+                * **[Andorid Manifest](./AndroidDemo/app/src/main/AndroidManifest.xml)**
+                    
