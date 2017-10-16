@@ -52,27 +52,58 @@ The basic structure of an Android Application built using Gradle is shown below.
 
     * **app**
 
-        This is the default application/module folder named as 'app'. It has all thr folders and files associated with our apllication.
+        This is the default application/module folder named as 'app'. It has all the folders and files associated with our apllication.
 
         ![](images/app.png)
 
         * **[build.gradle](./AndroidDemo/app/build.gradle)**
 
-            This is the gradle file pertaining to the module. The file has
+            ![](images/appgradle.png)
+            
+            This is the gradle file pertaining to the module.
 
         * **src**
 
-            This folder contains all the source files of the prject.
+            This folder contains all the source files of the project.  MultiFlavor of the app.
 
             ![](images/src.png)
 
             * **androidTest**
+
+                This folder contains the test files written to test android functions.
             * **test**
+
+                This folder contains the test files written to test Java functions.
             * **main**
+
+                This contains the main source code of the application. Whenever an apk is generated it contains source code present in this folder. So this forms the core components of the app.
 
                 ![](images/main.png)
 
-                * **java**
-                * **res**
                 * **[Andorid Manifest](./AndroidDemo/app/src/main/AndroidManifest.xml)**
-                    
+
+                    It is most important file for an Android App.Every application must have an AndroidManifest.xml file (with precisely that name) in its root directory. In an app Java or resource files are optional. Apps that runs as service don't have any resource associated. Apps like launcher pack does not have any java files associated to them. But each of them has manifest attached to them.
+                    It is neccessary to have a manifest for valid android application.
+                    It contains tags like application(So OS identify it as android application), package name, label (Name of application on launcher)
+
+                * **java**
+
+                    This folder contains all the java files of our Android application.
+
+                * **res**
+
+                    ![](images/res.png)
+
+                    This containes all the resource files required in our application. They logically segregated to their respective folders.
+
+                    Images needed in the app should be put in drawable folder.
+                    Images required by the OS associated with our app are put in mipmap eg launcher Icon.
+
+                    Layout containes the Android XML layout files which can be used in activities or fragment.
+
+                    Values folder contains values like colors, dimension, string. These values can be referenced in our app java files.
+
+                    We can also create enviornment specific resource folders. Enviornments include oritentaion of the phone, display density etc can be chosen from.
+                    Folder name followed followed by hyphen followed by a specifier is used to create such folders.
+                    Eg. values-land, values defined in this folder would be specific to landscape oritentaion of the phone. For potrait mode default values in 'values' folder will be used.
+                    Specific folders just overrides the value if phone is in that specific enviornmebt otherwise fall back to the default values.
