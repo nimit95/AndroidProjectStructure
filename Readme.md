@@ -19,11 +19,11 @@ The basic structure of an Android Application built using Gradle is shown below.
 
     * **.gradle**
 
-      This is a hidden folder. It is used to store downloaded librararies and Gradle cache. It also contains Snapshots and other automatically generated files. Generally there is no need to change anything in this folder.
+      This is a hidden folder. It is used to store downloaded libraries and Gradle cache. It also contains Snapshots and other automatically generated files. Generally, there is no need to change anything in this folder.
 
     * **.idea**
 
-      Android Studio is based on Intellij by Jetbrain. All Intellij IDEs store settings in '.idea' folder of the project. Example if you increase font for a particular file in Android Studio, the font size remains same when you open the file next time. All these type of settings are stored in this folder.
+      Android Studio is based on IntelliJ by Jetbrain. All IntelliJ IDEs store settings in '.idea' folder of the project. Example if you increase font for a particular file in Android Studio, the font size remains same when you open the file next time. All these types of settings are stored in this folder.
 
     * **bulid**
 
@@ -36,7 +36,7 @@ The basic structure of an Android Application built using Gradle is shown below.
       ![](images/gradleWrapper.png)
       [File Link](./AndroidDemo/gradle/wrapper/gradle-wrapper.properties)
 
-      In Gradle folder, we have a wrapper folder, which has a file for gradle properties. It denotes version of the gradle that is to be used to build the project. Android Studio automatically makes it to the latest version available.
+      In Gradle folder, we have a wrapper folder, which has a file for gradle properties. It denotes the version of gradle that is to be used to build the project. Android Studio automatically makes it to the latest version available.
 
     * **gradle.properties**
 
@@ -44,7 +44,7 @@ The basic structure of an Android Application built using Gradle is shown below.
 
     * **[bulild.gradle](./AndroidDemo/build.gradle)**
 
-        We are depending on gradle plugin to run our project. In this file gradle plugin version is mentioned for the whole project. Android Studio version and gradle plugin version should be same. If you open an earlier project then this version should be changed to match the current Android Studio version.
+        We are depending on Gradle plugin to run our project. In this file, Gradle plugin version is mentioned for the whole project. Android Studio version and Gradle plugin version should be same. If you open an earlier project then this version should be changed to match the current Android Studio version.
 
     * **[settings.gradle](./AndroidDemo/settings.gradle)**
 
@@ -59,8 +59,20 @@ The basic structure of an Android Application built using Gradle is shown below.
         * **[build.gradle](./AndroidDemo/app/build.gradle)**
 
             ![](images/appgradle.png)
-            
-            This is the gradle file pertaining to the module.
+
+            This is the Gradle file pertaining to the module. Gradle files are written in a language known as Groovy. The various components of the file are described below -
+
+            'android' block contains information related to Android compiling. The 'compileSdkVersion' is the version of the API the app is compiled against. This means you can use Android API features included in that version of the API. In this case, it is 26 corresponding to Android Oreo.
+
+            'targetSdkVersion' is the version for which the app has been tested.  
+
+            'minSdkversion' is the minimum Android version in which the app will work. It has to do with whether the newer APIs are backward compatible with API level below the specified version.
+
+            'versioncode' is the current version of the app. This should be updated to release an update of the app otherwise play store wouldn't accept the apk. Users cannot see this on the play store.
+
+            'versionName' is the version name displayed to users on play store and it can be changed to anything.
+
+            'dependencies' block contains the external dependencies/modules we want to include in the current module. These are the external libraries which provide extra features to your application. By default appcompat-v7 is included for Appcompat class to back port the material design till SDK version 7. The version 26 should match with compiled SDK version and '+' indicates to automatically use the latest version of the library.
 
         * **src**
 
@@ -82,8 +94,8 @@ The basic structure of an Android Application built using Gradle is shown below.
 
                 * **[Andorid Manifest](./AndroidDemo/app/src/main/AndroidManifest.xml)**
 
-                    It is most important file for an Android App.Every application must have an AndroidManifest.xml file (with precisely that name) in its root directory. In an app Java or resource files are optional. Apps that runs as service don't have any resource associated. Apps like launcher pack does not have any java files associated to them. But each of them has manifest attached to them.
-                    It is neccessary to have a manifest for valid android application.
+                    It is the most important file for an Android App.Every application must have an AndroidManifest.xml file (with precisely that name) in its root directory. In an app Java or resource files are optional. Apps that run as service don't have any resource associated. Apps like launcher pack do not have any java files associated with them. But each of them has manifest attached to them.
+                    It is necessary to have a manifest for a valid android application.
                     It contains tags like application(So OS identify it as android application), package name, label (Name of application on launcher)
 
                 * **java**
@@ -94,16 +106,16 @@ The basic structure of an Android Application built using Gradle is shown below.
 
                     ![](images/res.png)
 
-                    This containes all the resource files required in our application. They logically segregated to their respective folders.
+                    This contains all the resource files required in our application. The filse are logically segregated into their respective folders.
 
-                    Images needed in the app should be put in drawable folder.
+                    Images needed in the app should be put in the drawable folder.
                     Images required by the OS associated with our app are put in mipmap eg launcher Icon.
 
-                    Layout containes the Android XML layout files which can be used in activities or fragment.
+                    Layout folder contains the Android XML layout files which can be used in activities or fragment.
 
                     Values folder contains values like colors, dimension, string. These values can be referenced in our app java files.
 
-                    We can also create enviornment specific resource folders. Enviornments include oritentaion of the phone, display density etc can be chosen from.
-                    Folder name followed followed by hyphen followed by a specifier is used to create such folders.
-                    Eg. values-land, values defined in this folder would be specific to landscape oritentaion of the phone. For potrait mode default values in 'values' folder will be used.
-                    Specific folders just overrides the value if phone is in that specific enviornmebt otherwise fall back to the default values.
+                    We can also create environment specific resource folders. Environments include orientation of the phone, display density etc can be chosen from.
+                    Folder name followed by a hyphen followed by a specifier is used to create such folders.
+                    Eg. values-land, values defined in this folder would be specific to landscape orientation of the phone. For portrait mode default values in 'values' folder will be used.
+                    Specific folders just override the value if the phone is in that specific environment otherwise fall back to the default values.
