@@ -1,21 +1,23 @@
 
 # Android Project Structure Simplified
 
-If there is a project which consists of different type of files, we need a build tool to build the project. Build tools are programs that automate the creation of executable applications from source code(eg.apk for android app). Building incorporates compiling, linking and packaging the code into a usable or executable form.
+Switching from making a single file progrom to multi file project can be a difficult task. Likewise new Android Developers gets confused seeing multi file project. This guide will make transition easier by explaining each part of the Android Project Structure.
 
-Various tools like Ninja, Maven, MAKE and Gradle can be used to build projects. Earlier maven was used to build Android applications in eclipse. Android applications at the OS level are built using MAKE. Generally, now we use Gradle to build Android applications.
+A project which consists of different type of files, requires a build tool to build the project. Build tools are programs that automate the creation of such executable applications from source code(e.g.apk for android app). Building incorporates compiling, linking and packaging the code into a usable or executable form.
 
-Gradle is a build tool. It configures how an app is built. There are certain tasks which need to be performed to build an Android Application like Javac compiles java files, XML needs to be encoded, images are compressed and much more. Gradle manages this build system and performs the necessary tasks.    
+Various tools like Ninja, Maven, MAKE and Gradle can be used to build different type of projects. Earlier maven was used to build Android applications in Eclipse. Android applications at the OS level are built using MAKE. Generally, now we use Gradle to build Android applications.
 
-Now we understand the role of Gradle in building an Android application, we can now move to understanding the basic project structure.
+Gradle is also a build tool and it configures how an app is built. There are certain tasks which need to be performed to build an Android Application. These tasks include Javac compiling java files, encoding the XML files, compressing images etc. Gradle manages all this build system and performs these necessary tasks.    
 
-The basic structure of an Android Application built using Gradle is shown below. It has many folders inside AndroidDemo folder, we would study each of them in detail. ('app' folder is explained at the end)
+Now we understand the role of Gradle in building an Android application, we can move to understand the basic project structure.
+
+The basic structure of an Android Application built using Gradle is shown below. It has many folders inside Project folder(AndroidDemo), we would study each of them in detail. ('app' folder is explained at the end)
 
 ![](images/projStructure.png)
 
 * **AndroidDemo**
 
-    AndroidDemo is our project name. One project can have more than one application and module. By default, there is only one application in the 'app' folder. You can add more apps in this folder. The reason we want our project to have more than one application is to share data among themselves.
+    AndroidDemo is our project name. One project can have more than one application and module. By default, there is only one application in the 'app' folder. You can add more apps in project folder. The reason we want our project to have more than one application is to share data among themselves.
 
     * **.gradle**
 
