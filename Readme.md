@@ -1,7 +1,7 @@
 
 # Android Project Structure Simplified
 
-Switching from making a single file progrom to multi file project can be a difficult task. Likewise new Android Developers gets confused seeing multi file project. This guide will make transition easier by explaining each part of the Android Project Structure.
+Switching from making a single file progrom to multi-file project can be a difficult task. Likewise new Android Developers usually gets confused seeing Android's multi-file project. This guide will help make transition easier by explaining each and every part of the Android Project Structure in detail.
 
 A project which consists of different type of files, requires a build tool to build the project. Build tools are programs that automate the creation of such executable applications from source code(e.g.apk for android app). Building incorporates compiling, linking and packaging the code into a usable or executable form.
 
